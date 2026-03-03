@@ -95,13 +95,13 @@ const LESSONS = {
       objective:
         "Build judgment. Know when AI helps, when it hurts, and when it creates risk.",
       concept:
-        "Operators are measured by deployment quality, not usage volume. Before using AI ask: 1) What's the cost if wrong? 2) Can I verify independently? 3) Does this require trust, relationship, or lived judgment? Risk zones include high-stakes facts, confidential data, deeply personal communication, novel decisions, and skill atrophy. Selective use builds credibility.",
+        "AI Operators aren't measured by how often they use AI. They're measured by how well they deploy it. The most credible operators know when to put the tool down.\n\nThree questions to ask before using AI:\n- What's the cost if this output is wrong?\n- Can I verify the result independently?\n- Does this task require trust, relationship, or lived judgment?\n\nIf the answer to any of these is uncomfortable, pause.\n\nWhere AI introduces real risk:\n- Factual accuracy at high stakes: AI fabricates with confidence. Legal language, financial figures, medical information, citations, compliance details. If you can't verify it line by line, don't outsource it blindly.\n- Confidential data: Pasting client data, employee information, or proprietary strategy into a public AI tool is a compliance risk. Know your organization's policy before you prompt.\n- Deeply personal communication: Condolence messages, difficult feedback conversations, sincere apologies. AI-written versions are often detectable, and the cost of feeling inauthentic is higher than the time saved.\n- Novel decisions with no precedent: AI is trained on the past. It pattern-matches. If your situation is genuinely new, human judgment leads.\n- Skill atrophy: If you stop writing strategy memos, you stop knowing how to think through strategy. Use AI to accelerate your thinking, not replace it.\n\nThe credibility principle: leaders who AI-wash everything lose trust quickly. Leaders who use AI selectively and own their outputs build it.",
       strong:
-        "Use AI to draft a sensitive message, then rewrite in your own voice, review with stakeholders, and own every word before sending.",
+        "Using AI to draft a termination letter, then rewriting it entirely in your own voice, reviewing with HR, and owning every word.",
       challengeFields: [
         "One task where AI was the right call and why",
         "One task where you should have done it yourself",
-        "One task where you're unsure and the risk factors"
+        "One task where you're unsure and what the risk factors are"
       ]
     },
     {
@@ -110,14 +110,14 @@ const LESSONS = {
       objective:
         "Stop overfeeding and underfeeding AI. Prepare inputs like an operator.",
       concept:
-        "Both low-context prompting and context-dumping fail. Manage the context window with four techniques: summarize before analyze, chunk long documents, front-load critical instruction, and edit out irrelevant context.",
+        "Most people prompt in one of two broken ways: too little context or too much context. Both fail. The skill is intentional input design.\n\nWhat a context window is: every AI conversation has a limit on how much text it can hold and process. Think of it like a whiteboard. More content doesn't mean better results.\n\nThe four techniques:\n1. Summarize before you analyze.\nIf source material is long, run a summary pass first, then ask your real question.\nStep 1: Summarize key strategic priorities in under 200 words.\nStep 2: Using that summary, outline 3 growth opportunities.\n\n2. Chunk long documents.\nBreak large inputs into sections, process each independently, then synthesize.\n\n3. Front-load what matters.\nPut the most important instruction first.\n\n4. Edit what you include.\nIrrelevant context degrades output quality. Strip what doesn't serve the objective.",
       strong:
-        "Step 1: Summarize a long brief in under 200 words. Step 2: Use that summary to generate targeted growth opportunities.",
+        "Here is a 200-word summary of our all-hands key themes. Here are the 3 decisions that need follow-up. Write a one-page action brief for the leadership team.",
       challengeFields: [
         "Original one-shot approach you would have taken",
         "Chunked or summarized approach you used instead",
         "Quality difference in the output",
-        "Confidence comparison before vs after"
+        "Time comparison"
       ]
     }
   ]
@@ -265,8 +265,9 @@ function renderLesson(day, lesson) {
 
   el.lockedNote.classList.add("hidden");
   el.lesson.classList.remove("hidden");
+  const conceptHtml = esc(lesson.concept).replace(/\n/g, "<br>");
   el.lesson.innerHTML = `
-    <p>${esc(lesson.concept)}</p>
+    <p>${conceptHtml}</p>
     <pre>${esc(lesson.strong)}</pre>
   `;
 }
