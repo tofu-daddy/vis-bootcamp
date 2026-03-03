@@ -1,0 +1,137 @@
+:root {
+  --bg: #fef8ef;
+  --paper: #fffefb;
+  --ink: #1f2220;
+  --muted: #5e625d;
+  --line: #d7d4c8;
+  --hot: #ff5a36;
+  --cool: #127475;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: linear-gradient(180deg, #fff4df 0%, #fef8ef 48%, #f9f5ed 100%);
+  font-family: "Gill Sans", "Trebuchet MS", sans-serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1rem;
+  width: min(1200px, 95vw);
+  margin: 1rem auto 2rem;
+}
+
+.rail,
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.rail {
+  padding: 1rem;
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+}
+
+.board {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel { padding: 1rem; }
+
+.badge {
+  display: inline-block;
+  background: #ffe2c9;
+  border: 1px solid #f2bb8a;
+  border-radius: 999px;
+  padding: .35rem .65rem;
+  margin: .5rem 0;
+}
+
+.small { color: var(--muted); margin-top: .25rem; }
+
+.steps {
+  margin: .7rem 0 1rem;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: .35rem;
+}
+
+.steps li.done { color: var(--cool); font-weight: 700; }
+
+.stack { display: grid; gap: .7rem; }
+.row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .6rem; }
+
+label { display: grid; gap: .3rem; }
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: .62rem;
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: .62rem .9rem;
+  background: var(--hot);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+.ghost {
+  background: transparent;
+  color: var(--cool);
+  border: 1px solid var(--line);
+}
+
+.hidden { display: none; }
+
+#stats {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: .3rem .6rem;
+  border-radius: 999px;
+  background: #eff6f5;
+  border: 1px solid #c7dfdc;
+  color: #225e5e;
+}
+
+.card {
+  margin-top: .8rem;
+  border-radius: 14px;
+  padding: 1rem;
+  color: #fff;
+  background: linear-gradient(130deg, #ff5a36, #fe8a2e 40%, #127475);
+}
+
+.card p { margin: .35rem 0; }
+
+pre {
+  white-space: pre-wrap;
+  border: 1px solid var(--line);
+  background: #fff9f0;
+  padding: .7rem;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .rail { position: static; }
+}
