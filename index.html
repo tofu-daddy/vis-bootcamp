@@ -2,94 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vis-bootcamp/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Operator Sprint</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>AI Operator Bootcamp | Augustine Agency</title>
+    <script type="module" crossorigin src="/vis-bootcamp/assets/index-eZZGIuTV.js"></script>
+    <link rel="stylesheet" crossorigin href="/vis-bootcamp/assets/index-Dvb5zW2J.css">
   </head>
   <body>
-    <main class="layout">
-      <aside class="rail">
-        <h1>Operator Sprint</h1>
-        <p class="small">Daily leverage drills for cohort teams.</p>
-        <div id="dayBadge" class="badge"></div>
-        <ol class="steps">
-          <li id="stepCheck">Check-in</li>
-          <li id="stepLesson">Lesson</li>
-          <li id="stepChallenge">Challenge</li>
-          <li id="stepShare">Share</li>
-        </ol>
-        <button id="resetBtn" class="ghost" type="button">Reset Local Progress</button>
-      </aside>
-
-      <section class="board">
-        <section class="panel">
-          <h2 id="title"></h2>
-          <p id="objective" class="small"></p>
-          <div id="stats"></div>
-        </section>
-
-        <section class="panel">
-          <h3>1) Daily Check-in</h3>
-          <form id="checkin" class="stack">
-            <label>Yesterday I used AI for
-              <select name="use" required>
-                <option value="">Choose one</option>
-                <option>Writing</option>
-                <option>Research</option>
-                <option>Analysis</option>
-                <option>Creative ideation</option>
-                <option>Coding</option>
-                <option>Automation</option>
-                <option>Did not use AI</option>
-              </select>
-            </label>
-            <label>Leverage score (1-10)
-              <input type="number" name="score" min="1" max="10" required />
-            </label>
-            <label>Preferred AI platform today
-              <select name="platform" required>
-                <option value="">Choose one</option>
-                <option>ChatGPT</option>
-                <option>Claude</option>
-                <option>Gemini</option>
-                <option>Copilot</option>
-                <option>Perplexity</option>
-                <option>Other</option>
-              </select>
-            </label>
-            <label>Today I will upgrade
-              <input type="text" name="upgrade" maxlength="160" required />
-            </label>
-            <button type="submit">Unlock Lesson</button>
-          </form>
-        </section>
-
-        <section class="panel" id="lessonPanel">
-          <h3>2) Lesson</h3>
-          <p id="lockedNote" class="small">Check-in unlocks today's lesson.</p>
-          <article id="lesson" class="hidden"></article>
-        </section>
-
-        <section class="panel">
-          <h3>3) Mini-Challenge</h3>
-          <p id="challengeLock" class="small">Finish check-in first.</p>
-          <form id="challenge" class="stack hidden"></form>
-        </section>
-
-        <section class="panel">
-          <h3>4) Teams Share Card</h3>
-          <label class="stack">Best prompt today (optional)
-            <textarea id="best" rows="3" maxlength="240"></textarea>
-          </label>
-          <div class="row">
-            <button id="buildCard" type="button" disabled>Generate Card</button>
-            <button id="copyCard" class="ghost" type="button" disabled>Copy Text</button>
-          </div>
-          <article id="card" class="card hidden"></article>
-        </section>
-      </section>
-    </main>
-
-    <script src="app.js"></script>
+    <div id="root"></div>
   </body>
 </html>
